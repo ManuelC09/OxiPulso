@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block title %}Registro{% endblock %}
+
+{% block content %}
+<main class="mt-28 mb-10">
+    <h1 class="font-bold text-blue-700 text-4xl text-center mb-8">Regístrate</h1>
+    <form action="/registro" method="POST" class="max-w-md mx-auto bg-white p-8 rounded-lg shadow-md ">
+      <div class="mb-5">
+        <label for="nombre" class="block mb-2 text-sm font-medium text-gray-900 ">Nombre Completo</label>
+        <input type="text" id="nombre" name="nombre" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5       " placeholder="Nombre Completo" required />
+      </div>
+      <div class="mb-5">
+        <label for="fechaNacimiento" class="block mb-2 text-sm font-medium text-gray-900 ">Fecha de Nacimiento</label>
+        <input type="date" id="fechaNacimiento" name="fechaNacimiento" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5       " min="1900-01-01" max="2006-12-31" required />
+      </div>
+      <div class="mb-5">
+        <label for="sexo" class="block mb-2 text-sm font-medium text-gray-900 ">Sexo</label>
+        <select id="sexo" name="sexo" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5       " required>
+          <option value="" disabled selected>Selecciona tu sexo</option>
+          <option value="Masculino">Masculino</option>
+          <option value="Femenino">Femenino</option>
+          <option value="Otro">Otro</option>
+        </select>
+      </div>
+      <div class="mb-5">
+        <label for="usuario" class="block mb-2 text-sm font-medium text-gray-900 ">Tu usuario</label>
+        <input type="text" id="usuario" name="usuario" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5       " placeholder="Usuario" required />
+      </div>
+      <div class="mb-5">
+        <label for="email" class="block mb-2 text-sm font-medium text-gray-900 ">Tu email</label>
+        <input type="email" id="email" name="email" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5       " placeholder="nombre@ejemplo.com" required />
+      </div>
+      <div class="mb-5">
+        <label for="contraseña" class="block mb-2 text-sm font-medium text-gray-900 ">Contraseña</label>
+        <input type="password" id="contraseña" name="contraseña" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5       " required />
+      </div>
+      <div class="mb-5">
+        <label for="confirmarContraseña" class="block mb-2 text-sm font-medium text-gray-900 ">Repite tu contraseña</label>
+        <input type="password" id="confirmarContraseña" name="confirmarContraseña" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5       " required />
+      </div>
+      <div class="flex items-center mb-5">
+        <input type="checkbox" id="terms" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded    ">
+        <label for="terms" class="ml-2 text-sm font-medium text-gray-900 ">Acepto los <a href="#" class="text-blue-600 hover:underline ">términos y condiciones</a></label>
+      </div>
+      <button type="submit" class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center   ">Registrar cuenta</button>
+      <div class="text-center mt-5">
+        <p class="text-sm font-medium text-gray-900 ">Ya tienes una cuenta? <a href="{{ url_for('usuarios.iniciarSesion') }}" class="text-blue-600 hover:underline ">Inicia sesión</a></p>
+      </div>
+    </form>
+  </main>
+{% endblock %}

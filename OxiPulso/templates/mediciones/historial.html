@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}Historial{% endblock %}
+
+{% block content%}
+<main class="mt-28 mb-20">
+<div class="overflow-x-auto bg-white shadow-md sm:rounded-lg p-4 tabla-scroll">
+  
+  <table>
+    <thead>
+      <tr>
+        <th class="border px-4 py-2">Fecha</th>
+        <th class="border px-4 py-2">Hora</th>
+        <th class="border px-4 py-2">BPM</th>
+        <th class="border px-4 py-2">Spo2</th> 
+      </tr>       
+    </thead>
+    <tbody>
+      {% for medicion in mediciones %}
+      <tr>
+        <td class="border px-4 py-2">{{ medicion.fecha }}</td>
+        <td class="border px-4 py-2">{{ medicion.hora }}</td>
+        <td class="border px-4 py-2">{{ medicion.bpm }}</td>
+        <td class="border px-4 py-2">{{ medicion.spo2 }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  
+
+</div>
+
+  </main>
+
+
+{% endblock %}
