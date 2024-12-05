@@ -9,7 +9,7 @@ load_dotenv()
 app = Flask(__name__)
 
 # Configuración de la APP
-app.config.from_object('config.DevelopmentConfig')
+app.config.from_object('config.ProductionConfig')
 
 # app.config["TEMPLATES_AUTO_RELOAD"] = True
 # app.config['SESSION_PERMANENT'] = False
