@@ -1,0 +1,25 @@
+{% extends "administrador/admon.html" %}
+{% block title %}Mediciones{% endblock %}
+
+{% block content%}
+
+<main class="mt-28 mb-10">
+    <h1 class="font-bold text-blue-700 text-4xl text-center mb-8">Iniciar Sesión</h1>
+    <form action="/administrador/login" method="POST" class="max-w-md mx-auto bg-white p-8 rounded-lg shadow-md ">
+     
+        <div class="mb-5">
+            <label for="usuario" class="block mb-2 text-sm font-medium text-gray-900 ">Tu usuario</label>
+            <input type="text" id="usuario" name="usuario" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5       " placeholder="Usuario" required />
+          </div>
+      <div class="mb-5">
+        <label for="contraseña" class="block mb-2 text-sm font-medium text-gray-900 ">Contraseña</label>
+        <input type="password" id="password" name="contraseña" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5       " required />
+      </div>
+     
+      
+      <button type="submit" class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center   ">Iniciar Sesión</button>
+     
+    </form>
+  </main>
+
+{% endblock %}

@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% block title %}Medición{% endblock %}
+
+{% block content%}
+<main class="mt-28 mb-20">
+    <h3 class="font-bold text-blue-700 text-4xl text-center mb-2">Para obtener una medición pulse el botón</h3>
+    <form id="measurementForm" class="max-w-md mx-auto bg-white p-8 rounded-lg">
+        <input type="hidden" name="message" value="medir">
+        <button type="submit" id="submitButton" class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Obtener Medición</button>
+    </form>
+
+    <!-- Card de Medición -->
+    <div id="measurementCard" class="max-w-md mx-auto bg-white p-8 rounded-lg shadow-md mt-10 hidden">
+        <div class="flex items-center mb-4">
+            <div>
+                <div class="flex">
+                    <i class="ph ph-heartbeat text-red-500 text-3xl mr-3"></i>
+                    <h4 class="text-xl font-semibold text-gray-900">Frecuencia Cardíaca</h4>
+                </div>
+                <p class="text-lg text-gray-600 ml-10"><span id="bpm" class="value">80</span> bpm</p>
+            </div>
+        </div>
+        <div class="flex items-center mb-4">
+            <div>
+                <div class="flex">
+                    <i class="ph ph-wave-sawtooth text-blue-500 text-3xl mr-3"></i>
+                    <h4 class="text-xl font-semibold text-gray-900">Oxígeno en Sangre</h4>
+                </div>
+                <p class="text-lg text-gray-600 ml-10"><span id="spo2" class="value">99</span> %</p>
+            </div>
+        </div>
+        
+        <button id="newMeasurementButton" class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Nueva Medición</button>
+            
+    </div>
+
+    <!-- Información útil -->
+    <section class="max-w-screen-md mx-auto mt-10 p-4 bg-white rounded-lg">
+        <h3 class="text-2xl font-bold text-blue-700 mb-4">Consejos para una buena salud cardíaca</h3>
+        <ul class="list-disc pl-5 text-gray-600">
+            <li>Mantén una dieta equilibrada rica en frutas, verduras y granos enteros.</li>
+            <li>Realiza ejercicio regularmente, al menos 150 minutos de actividad moderada cada semana.</li>
+            <li>Evita fumar y reduce el consumo de alcohol.</li>
+            <li>Controla tu presión arterial y niveles de colesterol.</li>
+            <li>Gestiona el estrés mediante técnicas de relajación como la meditación o el yoga.</li>
+        </ul>
+    </section>
+
+    <section class="max-w-screen-md mx-auto mt-10 p-4 bg-white rounded-lg">
+        <h3 class="text-2xl font-bold text-blue-700 mb-4">Beneficios del seguimiento del oxígeno en sangre</h3>
+        <ul class="list-disc pl-5 text-gray-600">
+            <li>Ayuda a detectar problemas respiratorios de manera temprana.</li>
+            <li>Es crucial para personas con condiciones como EPOC o apnea del sueño.</li>
+            <li>Permite monitorear la respuesta del cuerpo al ejercicio y a la altitud.</li>
+            <li>Contribuye a evaluar la eficacia de tratamientos médicos.</li>
+            <li>Proporciona tranquilidad al saber que tus niveles de oxígeno son adecuados.</li>
+        </ul>
+    </section>
+</main>
+
+{% endblock %}
